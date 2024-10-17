@@ -1,13 +1,18 @@
 import { useState } from 'react'
+import Navigation from './navigation/Nav';
+import Products from './product/Products';
+import Recommended from './recommended/Recommended';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <h1>
-      Hello World
-    </h1>
+    <>
+      <Navigation />
+      <Products />
+      <Recommended />
+    </>
   )
 }
 
-export default App
+export default App;
