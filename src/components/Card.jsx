@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import { IoBag } from "react-icons/io5";
 
-const Card = () => {
+const Card = ({img, title, reviews, }) => {
   return (
     <section className="card">
       <img className='card-img' src="https://m.media-amazon.com/images/I/71yhoZP0l6L._AC_UY695_.jpg" alt="product" />
