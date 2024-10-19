@@ -6,7 +6,7 @@ import Sidebar from './sidebar/Sidebar';
 import Card from './components/Card';
 
 //Database
-import  products  from './db/data';
+import products from './db/data';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -19,7 +19,7 @@ function App() {
   };
 
   const filteredItems = products.filter((item) =>
-    item.title.toLowerCase().includes(query.toLowerCase() !== -1)
+    item.title.toLowerCase().includes(query.toLowerCase())
   );
 
   // Radio Filter
@@ -52,7 +52,14 @@ function App() {
     }
 
     return filteredData.map(({ img, title, star, reviews, prevPrice, newPrice }) =>
-      <Card img={img} title={title} star={star} reviews={reviews} prevPrice={prevPrice} newPrice={newPrice} key={Math.random()} />
+      <Card 
+      img={img} 
+      title={title} 
+      star={star} 
+      reviews={reviews} 
+      prevPrice={prevPrice} 
+      newPrice={newPrice} 
+      key={Math.random()} />
     );
   }
 
@@ -60,10 +67,10 @@ function App() {
 
   return (
     <>
-      <Sidebar handleChange = {handleRadioChange} />
-      <Navigation />
-      <Recommended />
-      <Products />
+      <Sidebar handleChange={handleRadioChange} />
+      <Navigation query={query} handleInputChange={handleInputChange} />
+      <Recommended handleClick={handleClick} />
+      <Products result={result} />
     </>
   )
 }
